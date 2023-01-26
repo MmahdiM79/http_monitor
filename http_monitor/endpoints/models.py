@@ -11,4 +11,7 @@ class Endpoint(models.Model):
         on_delete=models.CASCADE,
         related_name='endpoints'
     )
-    threshold = models.IntegerField()   
+    threshold = models.IntegerField()  
+
+    class Meta:
+        unique_together = ('url', 'user',)

@@ -26,7 +26,11 @@ from users.views import (
     RegisterApi,
 )
 
-from endpoints.views import CreateNewEndpoint
+from endpoints.views import (
+    CreateNewEndpoint,
+    DeleteEndpoint,
+    GetEndpointId,
+)
 
 
 urlpatterns = [
@@ -39,4 +43,6 @@ urlpatterns = [
     path('api/users/signup/', RegisterApi.as_view(), name='users register'),
 
     path('api/urls/new/', CreateNewEndpoint.as_view(), name='new url'),
+    path('api/urls/remove/<int:pk>', DeleteEndpoint.as_view(), name='delete url'),
+    path('api/urls/id/', GetEndpointId.as_view(), name='get url'),
 ]
