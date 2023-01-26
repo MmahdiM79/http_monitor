@@ -26,6 +26,8 @@ from users.views import (
     RegisterApi,
 )
 
+from endpoints.views import CreateNewEndpoint
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -35,4 +37,6 @@ urlpatterns = [
     path('api/users/', UserAPIView.as_view(), name='users login'),
     path('api/users/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/users/signup/', RegisterApi.as_view(), name='users register'),
+
+    path('api/urls/new/', CreateNewEndpoint.as_view(), name='new url'),
 ]
