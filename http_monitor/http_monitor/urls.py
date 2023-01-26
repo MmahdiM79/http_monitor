@@ -32,6 +32,8 @@ from endpoints.views import (
     GetEndpointId,
 )
 
+from monitoring.views import GetWarnings
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -45,4 +47,6 @@ urlpatterns = [
     path('api/urls/new/', CreateNewEndpoint.as_view(), name='new url'),
     path('api/urls/remove/<int:pk>', DeleteEndpoint.as_view(), name='delete url'),
     path('api/urls/id/', GetEndpointId.as_view(), name='get url'),
+
+    path('api/warnings/', GetWarnings.as_view(), name='get warnings'),
 ]

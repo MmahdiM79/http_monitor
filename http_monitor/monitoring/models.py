@@ -15,4 +15,4 @@ class healthCheckRequest(models.Model):
         null=False,
     )
     status = models.CharField(max_length=10)
-    sends_at = models.DateTimeField()
+    sends_at = models.DateTimeField(auto_now_add=True)
